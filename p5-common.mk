@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES := \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
-    device/samsung/p4-common/fstab.p3:root/fstab.p3 \
+    device/samsung/p5-common/fstab.p3:root/fstab.p3 \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
@@ -86,8 +86,8 @@ PRODUCT_PACKAGES += \
         audio_policy.p3 
 
 PRODUCT_COPY_FILES += \
-        device/samsung/p4-common/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-        device/samsung/p4-common/libaudio/libasound.conf:system/etc/libasound.conf
+        device/samsung/p5-common/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
+        device/samsung/p5-common/libaudio/libasound.conf:system/etc/libasound.conf
         
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -121,16 +121,16 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	make_ext4fs \
-	setup_fs
+        make_ext4fs \
+        setup_fs
 
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay
 
 # for bugmailer
 ifneq ($(TARGET_BUILD_VARIANT),user)
-	PRODUCT_PACKAGES += send_bug
-	PRODUCT_COPY_FILES += \
+        PRODUCT_PACKAGES += send_bug
+        PRODUCT_COPY_FILES += \
         system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
         system/extras/bugmailer/send_bug:system/bin/send_bug
 endif
